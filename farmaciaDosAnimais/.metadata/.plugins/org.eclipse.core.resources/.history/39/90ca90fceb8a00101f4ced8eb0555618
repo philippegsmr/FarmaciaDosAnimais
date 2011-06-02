@@ -1,0 +1,20 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Register extends JFrame{
+	
+	public Container container;
+	
+	public Register(String message){
+		
+		super(message);
+		this.container = getContentPane();
+		container.setLayout(new FlowLayout());
+				
+		setSize(600, 600);
+		setVisible(true);
+	}
+	
+	
+}

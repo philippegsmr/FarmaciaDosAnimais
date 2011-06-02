@@ -1,0 +1,26 @@
+
+public class SocialSecurity {
+
+	private String socialSecurityNumber;
+	
+	public SocialSecurity(String country, String numbers){
+		
+		if(country.equals("Brazil")){
+			this.setSocialBrazilianFormat(numbers);
+		}
+		else if(country.equals("United States of America")){
+			this.setSocialUSAFormat(numbers);
+		}
+		else{
+			System.out.println("Unknown");
+		}
+	}
+	
+	public void setSocialBrazilianFormat(String numbers){
+		
+	}
+	
+	public void setSocialUSAFormat(String numbers){
+		
+	}
+}

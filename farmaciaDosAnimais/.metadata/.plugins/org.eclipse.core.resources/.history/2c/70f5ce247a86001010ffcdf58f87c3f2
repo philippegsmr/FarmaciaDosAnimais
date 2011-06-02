@@ -1,0 +1,14 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Frameform extends JFrame{
+	
+	public Frameform(String title){
+		
+		super(title);
+		
+		setSize(400, 400);
+		setVisible(true);
+	}
+}

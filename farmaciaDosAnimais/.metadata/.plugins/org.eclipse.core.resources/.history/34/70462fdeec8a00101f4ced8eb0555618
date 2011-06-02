@@ -1,0 +1,8 @@
+import java.sql.*;
+
+public class SellerRegister extends Register{
+
+	public SellerRegister() throws SQLException{
+		super();
+	}
+}

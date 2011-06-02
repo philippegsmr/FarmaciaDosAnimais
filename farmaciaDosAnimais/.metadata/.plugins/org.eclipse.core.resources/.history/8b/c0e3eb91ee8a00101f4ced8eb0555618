@@ -1,0 +1,16 @@
+import java.sql.*;
+
+public class SellerRegister extends Register{
+
+	private Name sellerName;
+	private Birthday birthday;
+	/*
+	 * different format: country = brazil;
+	 */
+	private SocialSecurity socialSecurityNumber;
+	
+	public SellerRegister() throws SQLException{
+		super();
+		this.birthday = new Birthday();
+	}
+}

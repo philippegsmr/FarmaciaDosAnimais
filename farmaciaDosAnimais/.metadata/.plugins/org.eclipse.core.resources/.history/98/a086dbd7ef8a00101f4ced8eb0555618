@@ -1,0 +1,57 @@
+import java.sql.*;
+
+public class SellerRegister extends Register{
+
+	private Name sellerName;
+	private Birthday birthday;
+	/*
+	 * different format: country = brazil;
+	 */
+	private SocialSecurity socialSecurityNumber;
+	private Wage wage;
+	
+	public SellerRegister() throws SQLException{
+		super();
+		this.birthday = new Birthday();
+		this.sellerName = new Name();
+		this.socialSecurityNumber = new SocialSecurity();
+		this.wage = new Wage();
+	}
+	
+	public SellerRegister(Birthday birthday, Name name, SocialSecurity number, Wage wage) throws SQLException{
+		this.setSellerBirthday(birthday);
+		this.setSellerName(name);
+		this.setSellerSocialSecurityNumber(number);
+		this.setSellerWage(wage);
+	}
+	
+	private void setSellerWage(Wage wage) {
+		// TODO Auto-generated method stub
+		this.wage = wage;
+		
+	}
+
+	private void setSellerSocialSecurityNumber(SocialSecurity number) {
+		// TODO Auto-generated method stub
+		this.socialSecurityNumber = number;
+		
+	}
+
+	private void setSellerName(Name name) {
+		// TODO Auto-generated method stub
+		this.sellerName = name;
+		
+	}
+
+	public void setSellerBirthday(Birthday birthday){
+		this.birthday = birthday;
+	}
+	
+	public Birthday getSellerBirthday(){
+		return this.birthday;
+	}
+	
+	public Name getSellerName(){
+		return this.sellerName;
+	}
+}

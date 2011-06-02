@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: etf
+Build-Jdk: 1.6.0_10
+Specification-Title: bsaf
+Specification-Version: 1.9
+Implementation-Title: bsaf
+Implementation-Version: 1.9
+Implementation-Vendor-Id: org.jdesktop.bsaf
+url: http://kenai.com/projects/bsaf
+
