@@ -13,10 +13,12 @@ import javax.swing.*;
  */
 public class Menu extends JFrame implements ActionListener, ItemListener{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JCheckBoxMenuItem styleItems[];
 	private JLabel displayLabel;
-	private ButtonGroup fontGroup, colorGroup;
-	private int style;
 	private JMenuBar bar;
 	
 	/*
@@ -40,7 +42,7 @@ public class Menu extends JFrame implements ActionListener, ItemListener{
 		this.createSalesMenu();
 		this.createAccountsReceivable();
 		
-		//CyberTextron Inc. ( · )
+		//CYB·RT·XTRON Inc. · 
 		displayLabel = new JLabel("Farmacia dos Animais", SwingConstants.CENTER);
 		displayLabel.setForeground(Color.DARK_GRAY);
 		displayLabel.setFont(new Font("Serif", Font.PLAIN, 72));
@@ -96,7 +98,7 @@ public class Menu extends JFrame implements ActionListener, ItemListener{
 				new ActionListener(){
 					
 					public void actionPerformed(ActionEvent event){
-						Frameform frame = new Frameform("Cadastre");
+						ProductForm form = new ProductForm("Produto");
 					}
 				});
 	}

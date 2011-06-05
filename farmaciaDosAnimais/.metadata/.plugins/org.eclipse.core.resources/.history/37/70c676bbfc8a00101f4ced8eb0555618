@@ -1,0 +1,9 @@
+
+public class ProductRegister extends Register {
+
+	public ProductRegister() {
+		// TODO Auto-generated constructor stub
+		super();
+	}
+
+}

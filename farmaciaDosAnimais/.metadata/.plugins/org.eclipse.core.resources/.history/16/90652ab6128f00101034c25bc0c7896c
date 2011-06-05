@@ -1,0 +1,8 @@
+
+public class ProductForm {
+
+	public ProductForm() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

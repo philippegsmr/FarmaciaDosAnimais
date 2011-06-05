@@ -1,0 +1,61 @@
+
+public class Salary {
+	/*
+	 * defines the wage of the employee
+	 */
+	private double wage;
+	/*
+	 * defines how many hours per week does the employee work
+	 */
+	private int hoursPerWeek;
+
+	/*
+	 * defines the paymentFormat:
+	 * 		1 - per Month
+	 * 		2 - per hour
+	 */
+	private int paymentFormat;
+	
+	
+	/*
+	 * default constructor
+	 */
+	public Salary(){
+		this.wage = 0;
+		this.hoursPerWeek = 0;
+		this.paymentFormat = 1;
+	}
+	
+	/*
+	 * overrode Constructor: takes three arguments
+	 * the wage (double)
+	 * the number of hours worked per week
+	 * the paymentFormat;
+	 */
+	public Salary(double wage, int hoursPerWeek, int paymentFormat){
+		this.setPaymentFormat(paymentFormat);
+		this.setWage(wage);
+		this.setHoursPerWeek(hoursPerWeek);
+	}
+
+	public void setHoursPerWeek(int hoursPerWeek) {
+		// TODO Auto-generated method stub
+		if(hoursPerWeek >= 0  && hoursPerWeek <= 168){
+			this.hoursPerWeek = hoursPerWeek;
+		}
+		else{
+			this.hoursPerWeek = 0;
+		}
+		
+	}
+
+	public void setWage(double wage) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setPaymentFormat(int paymentFormat) {
+		// TODO Auto-generated method stub
+		
+	}
+}

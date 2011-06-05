@@ -1,0 +1,7 @@
+
+public class Supplier {
+
+	private Name name;
+	private Telephone telephone;
+	
+}

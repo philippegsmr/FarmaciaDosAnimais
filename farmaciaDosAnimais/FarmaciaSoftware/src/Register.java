@@ -14,4 +14,8 @@ public class Register extends JFrame{
 		this.connection = this.conn.getConnection();
 	}
 	
+	public Connection getConnection(){
+		return this.connection;
+	}
+	
 }

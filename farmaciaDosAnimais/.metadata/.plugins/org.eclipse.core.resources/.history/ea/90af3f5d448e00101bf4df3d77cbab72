@@ -1,0 +1,70 @@
+/*
+ * class written by Philippe Gabriel Souza Moraes Ribeiro
+ * Department of Computer Science, University of Minnesota
+ * Minneapolis, Minnesota, USA - 55455
+ */
+public class Locality {
+
+	private String country;
+	private String state;
+	private String city;
+	private String region;
+	
+	
+	public Locality(){
+		this.city = "";
+		this.country = "";
+		this.region = "";
+		this.state = "";
+	}
+	
+	public Locality(String country, String state, String city, String region){
+			this.setCountry(country);
+			this.setState(state);
+			this.setCity(city);
+			this.setRegion(region);
+	}
+
+	public void setRegion(String region) {
+		// TODO Auto-generated method stub
+		this.region = region;
+	}
+
+	public void setCity(String city) {
+		// TODO Auto-generated method stub
+		this.city = city;
+	}
+
+	public void setState(String state) {
+		// TODO Auto-generated method stub
+		this.state = state;
+		
+	}
+
+	public void setCountry(String country) {
+		// TODO Auto-generated method stub
+		this.country = country;
+		
+	}
+	
+	public String getCity(){
+		return this.city;
+	}
+	
+	public String getState(){
+		return this.state;
+	}
+	
+	public String getCountry(){
+		return this.country;
+	}
+	
+	public String getRegion(){
+		return this.region;
+	}
+	
+	public String formatToString(){
+		String locality = this.getRegion() + " " + this.getCity() + " " + this.getState() + " " + this.getCountry();
+		return locality;
+	}
+}

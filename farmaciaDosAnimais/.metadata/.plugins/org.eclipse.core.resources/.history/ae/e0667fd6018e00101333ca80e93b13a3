@@ -1,0 +1,43 @@
+
+public class Address {
+	
+	private String addressStreetName;
+	private int addressNumber;
+	private String addressZipCode;
+
+	public Address(){
+		this.addressStreetName = "";
+		this.addressNumber = 0;
+		this.addressZipCode = "";
+	}
+	
+	public Address(String street, int number, String zipCode){
+		this.setAddresStreetName(street);
+		this.setAddressNumber(number);
+		this.setAddressZipCode(zipCode);
+	}
+
+	/*
+	 * need a regular expression to format 
+	 * the zip code as xxxxx - xxxx
+	 */
+	public void setAddressZipCode(String zipCode) {
+		// TODO Auto-generated method stub
+		this.addressZipCode = zipCode;
+	}
+
+	public void setAddressNumber(int number) {
+		// TODO Auto-generated method stub
+		if(number > 0){
+			this.addressNumber = number;
+		}
+		else{
+			this.addressNumber = 0;
+		}
+	}
+
+	public void setAddresStreetName(String street) {
+		// TODO Auto-generated method stub
+		this.addressStreetName = street;
+	}
+}

@@ -10,7 +10,7 @@ public class SocialSecurity {
 	
 	public SocialSecurity(String country, String numbers){
 		
-		if(country.equals("Brazil")){
+		if(country.equals("Brasil")){
 			this.setSocialBrazilianFormat(numbers);
 		}
 		else if(country.equals("United States of America")){
@@ -29,7 +29,7 @@ public class SocialSecurity {
 		 * regular expression that formats to 
 		 * xxx.xxx.xxx - xx
 		 */
-		this.socialSecurityNumber = numbers;
+		this.socialSecurityNumber = String.format("{0:###.###.###-##}", numbers);
 	}
 	
 	/*
@@ -37,7 +37,7 @@ public class SocialSecurity {
 	 * xxx - xx - xxxx
 	 */
 	public void setSocialUSAFormat(String numbers){
-		this.socialSecurityNumber = numbers;
+		this.socialSecurityNumber = String.format("{0:###-##-####}", numbers);;
 	}
 	
 	/*

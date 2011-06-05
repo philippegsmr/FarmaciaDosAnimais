@@ -1,0 +1,27 @@
+
+public class Telephone {
+	private String telephone;
+	private String country;
+	
+	public Telephone(){
+		this.telephone = "";
+		this.country = "";
+	}
+	
+	/*
+	 * USA has a format xxx-xxx-xxxx for telephones
+	 * Brazil has a format xx - xxxx - xxxx for telephones
+	 */
+	public Telephone(String telephone, String country){
+		
+		if(country.equals("BRASIL")){
+			this.setTelephoneBrazilFormat(telephone);
+		}
+		else if(country.equals("UNITED STATES OF AMERICA")){
+			
+		}
+		else{
+			
+		}
+	}
+}

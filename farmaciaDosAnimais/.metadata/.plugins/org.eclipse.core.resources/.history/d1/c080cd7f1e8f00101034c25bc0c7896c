@@ -1,0 +1,77 @@
+/*
+ * class written by Philippe Gabriel Souza Moraes Ribeiro
+ * Department of Computer Science, University of Minnesota
+ * Minneapolis, Minnesota, USA - 55455
+ * 
+ * the class Telephone takes a String such as 1234567890
+ * and formats it into 123-456-7890 in US format or 
+ * 12 - 3456 - 7890 in Brazil format
+ */
+public class Telephone {
+	
+	private String telephone;
+	private String country;
+	
+	public Telephone(){
+		this.telephone = "";
+		this.country = "";
+	}
+	
+	/*
+	 * USA has a format xxx-xxx-xxxx for telephones
+	 * Brazil has a format xx - xxxx - xxxx for telephones
+	 */
+	public Telephone(String telephone, String country){
+		
+		if(country.equals("Brasil")){
+			this.setTelephoneBrazilFormat(telephone);
+		}
+		else if(country.equals("Unites States of America")){
+			this.setTelephoneUSAFormat(telephone);
+		}
+		else{
+			System.out.println("Error");
+		}
+		this.setTelephoneCountry(country);
+	}
+	
+	/*
+	 * input is a flat string number, as xxxxxxxxx
+	 * perhaps we should check the string's length; 
+	 * regular expression formats the telephone to the xx - xxxx - xxxx format
+	 */
+	public void setTelephoneBrazilFormat(String telephone){
+		if(telephone.length() == 10){
+			this.telephone = String.format("{0:(##) ####-####}", telephone);
+		}
+		else{
+			this.telephone = "";
+		}
+	}
+	
+	/*
+	 * regular expression formats the telephone to the xxx-xxx-xxx format
+	 */
+	public void setTelephoneUSAFormat(String telephone){
+		if(telephone.length() == 10){
+			this.telephone = String.format("{0:(###) ###-####}", telephone);
+		}
+		else{
+			this.telephone = "";
+		}
+	}
+	
+	public void setTelephoneCountry(String country){
+		this.country = country;
+	}
+	
+	public String getTelephoneCountry(){
+		return this.country;
+	}
+	/*
+	 * returns the telephone formatted
+	 */
+	public String getTelephone(){
+		return this.telephone;
+	}
+}

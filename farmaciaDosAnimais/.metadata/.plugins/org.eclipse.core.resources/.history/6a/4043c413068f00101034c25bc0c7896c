@@ -1,0 +1,33 @@
+
+import java.sql.*;
+
+public class ProductRegister extends Register {
+
+	private Product product;
+	private Connection conn;
+	
+	public ProductRegister() throws SQLException {
+		// TODO Auto-generated constructor stub
+		super();
+	}
+	
+	/*
+	 * sets up the product and makes the database connection;
+	 */
+	public ProductRegister(Product product) throws SQLException{
+		this.product = product;
+		this.conn = this.getConnection();
+	}
+	
+	public int addNewProduct(){
+		try{
+			
+		}
+		catch(SQLException e){
+			
+			return -1;
+		}
+	}
+	
+
+}

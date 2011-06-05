@@ -1,0 +1,61 @@
+
+public class Telephone {
+	private String telephone;
+	private String country;
+	
+	public Telephone(){
+		this.telephone = "";
+		this.country = "";
+	}
+	
+	/*
+	 * USA has a format xxx-xxx-xxxx for telephones
+	 * Brazil has a format xx - xxxx - xxxx for telephones
+	 */
+	public Telephone(String telephone, String country){
+		
+		if(country.equals("BRASIL")){
+			this.setTelephoneBrazilFormat(telephone);
+		}
+		else if(country.equals("UNITED STATES OF AMERICA")){
+			this.setTelephoneUSAFormat(telephone);
+		}
+		else{
+			System.out.println("Error");
+		}
+		this.setTelephoneCountry(country);
+	}
+	
+	/*
+	 * input is a flat string number, as xxxxxxxxx
+	 * perhaps we should check the string's length; 
+	 * regular expression formats the telephone to the xx - xxxx - xxxx format
+	 */
+	public void setTelephoneBrazilFormat(String telephone){
+		this.telephone = String.format("{0:(##) ####-####}", telephone);
+	}
+	
+	/*
+	 * regular expression formats the telephone to the xxx-xxx-xxx format
+	 */
+	public void setTelephoneUSAFormat(String telephone){
+		if(telephone.length() == 10){
+			this.telephone = String.format("{0:(###) ###-####}", telephone);
+		}
+		else{
+			this.telephone = "";
+		}
+	}
+	
+	public void setTelephoneCountry(String country){
+		this.country = country;
+	}
+	
+	public String getTelephoneCountry(){
+		return this.country;
+	}
+	
+	public String getTelephone(){
+		return this.telephone;
+	}
+}

@@ -96,4 +96,9 @@ public class Name {
 	public String getMiddleName(){
 		return this.middleName;
 	}
+	
+	public String formatToString(){
+		String name = this.getFirstName() + " " + this.getMiddleName() + " " + this.getLastName();
+		return name;
+	}
 }

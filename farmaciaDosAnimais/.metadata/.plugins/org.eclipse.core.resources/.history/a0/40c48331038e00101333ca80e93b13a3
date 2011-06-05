@@ -1,0 +1,43 @@
+
+public class Locality {
+
+	private String country;
+	private String state;
+	private String city;
+	private String region;
+	
+	
+	public Locality(){
+		this.city = "";
+		this.country = "";
+		this.region = "";
+		this.state = "";
+	}
+	
+	public Locality(String country, String state, String city, String region){
+			this.setCountry(country);
+			this.setState(state);
+			this.setCity(city);
+			this.setRegion(region);
+	}
+
+	public void setRegion(String region2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setCity(String city2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setState(String state2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setCountry(String country2) {
+		// TODO Auto-generated method stub
+		
+	}
+}

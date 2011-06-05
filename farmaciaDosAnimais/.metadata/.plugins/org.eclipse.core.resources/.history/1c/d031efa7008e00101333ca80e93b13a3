@@ -1,0 +1,7 @@
+
+public class Address {
+	
+	private String streetName;
+	private int number;
+	private String zipCode;
+}

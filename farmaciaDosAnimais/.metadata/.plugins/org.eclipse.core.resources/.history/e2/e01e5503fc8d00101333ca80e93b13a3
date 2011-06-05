@@ -1,0 +1,99 @@
+
+public class Salary {
+	/*
+	 * defines the wage of the employee
+	 */
+	private double wage;
+	/*
+	 * defines how many hours per week does the employee work
+	 */
+	private int hoursPerWeek;
+
+	/*
+	 * defines the paymentFormat:
+	 * 		1 - per Month
+	 * 		2 - per hour
+	 */
+	private int paymentFormat;
+	
+	/*
+	 * defines the amount received by the
+	 * employee in a certain period of time
+	 */
+	private double salary;
+	/*
+	 * default constructor
+	 */
+	public Salary(){
+		this.wage = 0;
+		this.hoursPerWeek = 0;
+		this.paymentFormat = 1;
+	}
+	
+	/*
+	 * overrode Constructor: takes three arguments
+	 * the wage (double)
+	 * the number of hours worked per week
+	 * the paymentFormat;
+	 * 
+	 */
+	public Salary(double wage, int hoursPerWeek, int paymentFormat){
+		this.setPaymentFormat(paymentFormat);
+		this.setWage(wage);
+		this.setHoursPerWeek(hoursPerWeek);
+	}
+
+	/*
+	 * checks if the number of hours worked is valid (between 0 and 168)
+	 * then sets it to the field variable hoursPerWeek
+	 * 
+	 * else, sets it to 0
+	 */
+	public void setHoursPerWeek(int hoursPerWeek) {
+		// TODO Auto-generated method stub
+		if(hoursPerWeek >= 0  && hoursPerWeek <= 168){
+			this.hoursPerWeek = hoursPerWeek;
+		}
+		else{
+			this.hoursPerWeek = 0;
+		}
+		
+	}
+
+	/*
+	 * 
+	 */
+	public void setWage(double wage) {
+		// TODO Auto-generated method stub
+		if(wage >= 0){
+			this.wage = wage;
+		}
+		else{
+			this.wage = 0;
+		}
+		
+	}
+
+	public void setPaymentFormat(int paymentFormat) {
+		// TODO Auto-generated method stub
+		if(paymentFormat == 1 || paymentFormat == 2){
+			this.paymentFormat = paymentFormat;
+		}
+		else{
+			this.paymentFormat = 1;
+		}
+	}
+	
+	public double calculateSalary(){
+		if(this.paymentFormat == 1){
+			this.salary = this.wage;
+		}
+		else{
+			/*
+			 * checks if the employee worked overtime
+			 */
+			if(this.hoursPerWeek > 40)
+			this.salary = this.wage * this.hoursPerWeek;
+		}
+	}
+}

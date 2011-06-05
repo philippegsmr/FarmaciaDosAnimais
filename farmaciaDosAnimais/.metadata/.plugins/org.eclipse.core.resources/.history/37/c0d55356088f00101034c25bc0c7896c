@@ -1,0 +1,68 @@
+
+import java.sql.*;
+
+public class ProductRegister extends Register {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Product product;
+	private Connection conn;
+	
+	public ProductRegister() throws SQLException {
+		// TODO Auto-generated constructor stub
+		super();
+	}
+	
+	/*
+	 * sets up the product and makes the database connection;
+	 */
+	public ProductRegister(Product product) throws SQLException{
+		this.product = product;
+		this.conn = this.getConnection();
+	}
+	
+	public void createProductTable(){
+		String query =  "CREATE TABLE IF NOT EXISTS Products(id INT NOT NULL AUTO_INCREMENT, " +
+		"PRIMARY KEY(id)," +
+		"unity VARCHAR(7) NOT NULL," +
+		"quantity INT NOT NULL," +
+		"priceCash FLOAT NOT NULL," +
+		"priceTerm FLOAT NOT NULL," +
+		"finalPrice FLOAT NOT NULL," +
+		"description VARCHAR(100) NOT NULL)ENGINE=INNODB";
+
+		try{
+
+			try{
+				Statement st = this.conn.createStatement();
+				st.execute(query);
+				System.out.println("Table Products created with success!");
+			}
+			catch (SQLException e) {
+				// TODO Auto-generated catch block
+				System.out.println("Table already exists");
+			}
+			this.conn.close();
+		}
+		catch(SQLException e){
+			e.printStackTrace();
+		}	
+	}
+	
+	public int addNewProduct(){
+		try{
+			String query = "";
+			Statement st = this.conn.createStatement();
+			st.execute(query);
+			return 0;
+		}
+		catch(SQLException e){
+			
+			return -1;
+		}
+	}
+	
+
+}

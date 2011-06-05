@@ -1,0 +1,65 @@
+
+public class Company {
+	
+	private String name;
+	private String identificationNumber;
+	private Address address;
+	private Telephone telephone;
+	
+	public Company(){
+		this.name = "";
+		this.identificationNumber = "";
+		this.address = new Address();
+		this.telephone = new Telephone();
+	}
+	
+	public Company(String name, String id, Address address, Telephone telephone){
+		this.setCompanyName(name);
+		this.setCompanyIdentificationNumber(id);
+		this.setCompanyAddress(address);
+		this.setCompanyTelephone(telephone);
+	}
+
+	public void setCompanyTelephone(Telephone telephone) {
+		// TODO Auto-generated method stub
+		this.telephone = telephone;
+	}
+
+	public void setCompanyAddress(Address address) {
+		// TODO Auto-generated method stub
+		this.address = address;
+	}
+
+	/*
+	 * needs to have a regular expression to format it correctly
+	 */
+	public void setCompanyIdentificationNumber(String id) {
+		// TODO Auto-generated method stub
+		this.identificationNumber = id;
+	}
+
+	public void setCompanyName(String name) {
+		// TODO Auto-generated method stub
+		this.name = name;
+	}
+	
+	public String getCompanyName(){
+		return this.name;
+	}
+	
+	public String getCompanyIdentificationNumber(){
+		return this.identificationNumber;
+	}
+	
+	public Telephone getCompanyTelephone(){
+		return this.telephone;
+	}
+	
+	public Address getCompanyAddress(){
+		return this.address;
+	}
+	
+	
+	
+	
+}

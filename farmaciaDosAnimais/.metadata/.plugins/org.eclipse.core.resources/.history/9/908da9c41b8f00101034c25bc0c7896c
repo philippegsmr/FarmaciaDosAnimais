@@ -1,0 +1,50 @@
+
+public class Supplier {
+
+	private Name name;
+	private Telephone telephone;
+	private Company company;
+	private Integer supplierId;
+	private Address address;
+	
+	public Supplier(){
+		this.name = new Name();
+		this.telephone = new Telephone();
+		this.company = new Company();
+		this.address = new Address();
+		this.supplierId = 0;
+	}
+	
+	public Supplier(Name name, Telephone telephone, Company company, Integer id, Address address){
+		this.setSupplierName(name);
+		this.setSupplierTelephone(telephone);
+		this.setSupplierCompany(company);
+		this.setSupplierId(id);
+		this.setSupplierAddress(address);
+	}
+
+	public void setSupplierAddress(Address address2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setSupplierId(Integer id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setSupplierTelephone(Telephone telephone2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setSupplierCompany(Company company2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setSupplierName(Name name2) {
+		// TODO Auto-generated method stub
+		
+	}
+}

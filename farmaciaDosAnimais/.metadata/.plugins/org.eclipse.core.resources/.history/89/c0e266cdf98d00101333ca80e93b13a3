@@ -1,0 +1,13 @@
+
+public class Wage {
+
+	private double wage;
+	private String country;
+	public Wage(){
+		
+	}
+	
+	public Wage(String country, double wage){
+		
+	}
+}

@@ -1,0 +1,8 @@
+
+public class Company {
+	
+	private String name;
+	private String identificationNumber;
+	private Address address;
+	private Telephone telephone;
+}

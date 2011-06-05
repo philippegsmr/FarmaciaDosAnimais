@@ -1,0 +1,48 @@
+import java.util.regex.Pattern;
+import java.util.regex.*;
+
+public class Telephone {
+	private String telephone;
+	private String country;
+	
+	public Telephone(){
+		this.telephone = "";
+		this.country = "";
+	}
+	
+	/*
+	 * USA has a format xxx-xxx-xxxx for telephones
+	 * Brazil has a format xx - xxxx - xxxx for telephones
+	 */
+	public Telephone(String telephone, String country){
+		
+		if(country.equals("BRASIL")){
+			this.setTelephoneBrazilFormat(telephone);
+		}
+		else if(country.equals("UNITED STATES OF AMERICA")){
+			this.setTelephoneUSAFormat(telephone);
+		}
+		else{
+			System.out.println("Error");
+		}
+	}
+	
+	/*
+	 * regular expression formats the telephone to the xx - xxxx - xxxx format
+	 */
+	public void setTelephoneBrazilFormat(String telephone){
+		Pattern pattern;
+		this.telephone = telephone;
+	}
+	
+	/*
+	 * regular expression formats the telephone to the xxx-xxx-xxx format
+	 */
+	public void setTelephoneUSAFormat(String telephone){
+		this.telephone = telephone;
+	}
+	
+	public String getTelephone(){
+		return this.telephone;
+	}
+}

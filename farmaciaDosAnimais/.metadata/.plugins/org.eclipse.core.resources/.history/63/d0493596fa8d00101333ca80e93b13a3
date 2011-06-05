@@ -1,0 +1,30 @@
+
+public class Salary {
+	/*
+	 * defines the wage of the employee
+	 */
+	private double wage;
+	/*
+	 * defines how many hours per week does the employee work
+	 */
+	private int hoursPerWeek;
+
+	/*
+	 * defines the paymentFormat:
+	 * 		1 - per Month
+	 * 		2 - per hour
+	 */
+	private int payFormat;
+	
+	
+	/*
+	 * default constructor
+	 */
+	public Salary(){
+		this.wage = 0;
+		this.hoursPerWeek = 0;
+		this.payFormat = 1;
+	}
+	
+	public 
+}
