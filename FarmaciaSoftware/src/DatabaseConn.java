@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.util.*;
 
 /*
  * class written by Philippe Gabriel Souza Moraes Ribeiro
@@ -12,12 +13,25 @@ public class DatabaseConn {
 
 	// element to establish a connection
 	private Connection conn;
+	private String userName;
+	private String password;
+	private String dbName;
+	private String dbms;
+	private String serverName;
+	private String portNumber;
 
 	/*
 	 * default constructor, only initializes the values
 	 */
 	public DatabaseConn(){
 		this.conn = null;
+		this.userName = "philippe";
+		this.password = ".E5TOMcC";
+		this.dbName = "farmacia";
+		this.portNumber = "3306";
+		this.serverName = "localhost";
+		this.dbms = "mysql";
+		
 	}
 	
 	/*
@@ -30,21 +44,21 @@ public class DatabaseConn {
 	 */
 	public Connection getConnection() throws SQLException {
 		
-		try{
-			String userName = "philippe";
-	        String password = ".E5TOMcC";
-	        String url = "jdbc:mysql://localhost/test";
-	        Class.forName ("com.mysql.jdbc.Driver").newInstance ();
-	        this.conn = DriverManager.getConnection (url, userName, password);
-	        System.out.println ("Database connection established");
+	    Properties connectionProps = new Properties();
+	    connectionProps.put("user", this.userName);
+	    connectionProps.put("password", this.password);
+
+	    if (this.dbms.equals("mysql")) {
+	      this.conn = DriverManager.
+	        getConnection("jdbc:" + this.dbms + "://" + this.serverName +
+	                      ":" + this.portNumber + "/", connectionProps);
+	    } else if (this.dbms.equals("derby")) {
+	      this.conn = DriverManager.
+	        getConnection("jdbc:" + this.dbms + ":" + this.dbName + ";create=true", connectionProps);
 	    }
-	    catch (Exception e){
-	        System.err.println ("Cannot connect to database server");
-	    }
-	    
+	    System.out.println("Connected to database");
 	    return this.conn;
 	  }
-
 	/*
 	 *	function closeConnection closes the db connection
 	 *	returns a void value.
