@@ -4,6 +4,9 @@
  * Minneapolis, Minnesota, USA - 55455
  * 
  * class Name: defines a person's name;
+ * 
+ * Name has been tests and 2 bugs where found at setLastName 
+ * and setMiddleName functions
  */
 public class Name {
 	/*
@@ -34,8 +37,8 @@ public class Name {
 	 */
 	public Name(String first, String middle, String last){
 		this.setFirstName(first);
-		this.setLastName(last);
 		this.setMiddleName(middle);
+		this.setLastName(last);
 	}
 	
 	/*
@@ -55,7 +58,7 @@ public class Name {
 	 */
 	public void setMiddleName(String middle){
 		
-		if(middle.equals(middle)){
+		if(middle.equals("")){
 			this.middleName = "";
 		}
 		
@@ -68,7 +71,7 @@ public class Name {
 	 * checks if LastName is valid, if so  sets it to lastName
 	 */
 	public void setLastName(String last){
-		if(last.equals(last)){
+		if(last.equals("")){
 			this.lastName = "";
 		}
 		else{

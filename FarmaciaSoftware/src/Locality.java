@@ -12,6 +12,7 @@
  * private String city: the city's name e.g: Minneapolis
  * private string Region: a region name: e.g: Dinkytown
  * 
+ * class has been tested in June 8th, 2011
  */
 public class Locality {
 

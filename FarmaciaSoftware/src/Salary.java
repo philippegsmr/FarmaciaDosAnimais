@@ -13,6 +13,8 @@
  *  final double OVERTIMERATE , in case of the employee is getting paid hourly, the overtime rate of 1.5 applies over 40 hours
  *  double salary, defines how the employee is going to get paid
  * 
+ * class has been tested by Philippe Ribeiro
+ * in June 8th, 2010
  */
 public class Salary {
 	/*
@@ -56,7 +58,7 @@ public class Salary {
 	 * the paymentFormat;
 	 * 
 	 */
-	public Salary(double wage, int hoursPerWeek, int paymentFormat){
+	public Salary(double wage, double hoursPerWeek, int paymentFormat){
 		this.setPaymentFormat(paymentFormat);
 		this.setWage(wage);
 		this.setHoursPerWeek(hoursPerWeek);
@@ -68,7 +70,7 @@ public class Salary {
 	 * 
 	 * else, sets it to 0
 	 */
-	public void setHoursPerWeek(int hoursPerWeek) {
+	public void setHoursPerWeek(double hoursPerWeek) {
 		// TODO Auto-generated method stub
 		if(hoursPerWeek >= 0  && hoursPerWeek <= 168){
 			this.hoursPerWeek = hoursPerWeek;
