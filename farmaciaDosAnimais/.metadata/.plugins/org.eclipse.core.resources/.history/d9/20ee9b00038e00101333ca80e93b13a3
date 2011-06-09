@@ -1,0 +1,20 @@
+
+public class Locality {
+
+	private String country;
+	private String state;
+	private String city;
+	private String region;
+	
+	
+	public Locality(){
+		this.city = "";
+		this.country = "";
+		this.region = "";
+		this.state = "";
+	}
+	
+	public Locality(String country, String state, String city, String region){
+		
+	}
+}

@@ -1,0 +1,10 @@
+
+public class Telephone {
+	private String telephone;
+	private String country;
+	
+	public Telephone(){
+		this.telephone = "";
+		this.country = "";
+	}
+}

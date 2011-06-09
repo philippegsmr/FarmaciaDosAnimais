@@ -1,0 +1,17 @@
+import java.sql.SQLException;
+
+
+public class ProductRegister extends Register {
+
+	private int productId;
+	private String productReference;
+	private String productDescription;
+	private String unity;
+	
+	public ProductRegister() throws SQLException {
+		// TODO Auto-generated constructor stub
+		super();
+	}
+	
+
+}

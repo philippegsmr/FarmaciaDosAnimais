@@ -1,0 +1,13 @@
+
+public class Address {
+	
+	private String streetName;
+	private int number;
+	private String zipCode;
+
+	public Address(){
+		this.streetName = "";
+		this.number = 0;
+		this.zipCode = "";
+	}
+}

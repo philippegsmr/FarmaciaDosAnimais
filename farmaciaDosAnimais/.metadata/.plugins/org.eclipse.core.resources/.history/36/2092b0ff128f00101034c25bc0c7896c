@@ -1,0 +1,9 @@
+
+public class ProductForm extends Frameform{
+
+	public ProductForm(){
+		// TODO Auto-generated constructor stub
+		super("Adicione um novo produto");
+	}
+
+}

@@ -1,0 +1,15 @@
+
+public class Product {
+	private Integer productId;
+	private String productName;
+	private String unity;
+	private Integer quantityInStock;
+	private Double priceInCash;
+	private Double priceInTerm;
+	private String application;
+	
+	
+	public Product(){
+		
+	}
+}

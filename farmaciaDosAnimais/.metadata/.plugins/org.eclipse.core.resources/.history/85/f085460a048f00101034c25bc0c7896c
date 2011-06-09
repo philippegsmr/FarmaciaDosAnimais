@@ -1,0 +1,77 @@
+
+public class Product {
+	
+	private Integer productId;
+	private String productName;
+	private String productUnity;
+	private Integer productQuantity;
+	private Double productPriceInCash;
+	private Double productPriceInTerm;
+	private String productDescription;
+	
+	private final String unities[] = {"UN", "PCT", "FC"};
+	public Product(){
+		this.productId = 0;
+		this.productName = "";
+		this.productUnity = "";
+		this.productQuantity = 0;
+		this.productPriceInCash = 0.00;
+		this.productPriceInTerm = 0.00;
+		this.productDescription = "";
+	}
+	
+	public Product(Integer id, String name, String unity, Integer quantity, Double priceCash, Double priceTerm, String description){
+		this.setProductId(id);
+		this.setProductName(name);
+		this.setProductUnity(unity);
+		this.setProductQuantity(quantity);
+		this.setProductPriceCash(priceCash);
+		this.setProductPricetTerm(priceTerm);
+		this.setProductDescription(description);
+	}
+
+	public void setProductDescription(String description) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setProductPricetTerm(Double priceTerm) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setProductPriceCash(Double priceCash) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setProductQuantity(Integer quantity) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setProductName(String name) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void setProductQuantity(Integer quantity) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void setProductUnity(String unity) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void setProductId(String name) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void setProductId(Integer id) {
+		// TODO Auto-generated method stub
+		
+	}
+}

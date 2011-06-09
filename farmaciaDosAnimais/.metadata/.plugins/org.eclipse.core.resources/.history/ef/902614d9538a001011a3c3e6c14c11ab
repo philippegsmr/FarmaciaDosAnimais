@@ -1,0 +1,333 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+/*
+ * Main interface of the program
+ * 
+ * made by Philippe Ribeiro 
+ * Department of Computer Science, University of Minnesota
+ * Minneapolis, Minnesota, USA - 55455
+ * 
+ * 
+ */
+public class Menu extends JFrame implements ActionListener{
+	
+	private final Color colorValues[] = {Color.BLACK, Color.BLUE, Color.RED, Color.GREEN};
+	private JRadioButtonMenuItem colorItems[], fonts[];
+	private JCheckBoxMenuItem styleItems[];
+	private JLabel displayLabel;
+	private ButtonGroup fontGroup, colorGroup;
+	private int style;
+	private JMenuBar bar;
+	
+	/*
+	 * constructor of the class Menu
+	 */
+	public Menu(){
+		super("Farmacia dos Animais");
+		
+		/*
+		 * Creates the bar to insert the menus
+		 * 
+		 */
+		this.bar = new JMenuBar();
+		setJMenuBar(this.bar);
+		/*
+		 * these functions add a new Menu to the menu bar ... 
+		 */
+		this.createRegisterMenu();
+		this.createStockMenu();
+		this.createProductMenu();
+		this.createSalesMenu();
+		this.createAccountsReceivable();
+		
+		//CyberTextron Inc. ( · )
+		displayLabel = new JLabel("Farmacia dos Animais", SwingConstants.CENTER);
+		displayLabel.setForeground(colorValues[0]);
+		displayLabel.setFont(new Font("Serif", Font.PLAIN, 72));
+		
+		getContentPane().setBackground(Color.GRAY);
+		getContentPane().add(displayLabel, BorderLayout.CENTER);
+		
+		setSize(1200, 1200);
+		setVisible(true);
+	
+ 	}
+	
+	public void actionPerformed(ActionEvent event){
+		
+	}
+	public void createAccountsReceivable(){
+		
+		JMenu contasReceber = new JMenu("Contas a Receber");
+		contasReceber.setMnemonic('F');
+		
+		JMenuItem novasContas = new JMenuItem("Novas Contas");
+		novasContas.setMnemonic('A');
+		contasReceber.add(novasContas);
+		novasContas.addActionListener(
+				
+				new ActionListener(){
+					
+					public void actionPerformed(ActionEvent event){
+						JOptionPane.showMessageDialog(Menu.this, "This is an example\nof using menus", "About", JOptionPane.PLAIN_MESSAGE);
+					}
+				});
+		
+		this.bar.add(contasReceber);
+	}
+	
+	public void addMenuItemListener(JMenuItem item, JMenu menu){
+		item.setMnemonic('A');
+		menu.add(item);
+		item.addActionListener(
+				
+				new ActionListener(){
+					
+					public void actionPerformed(ActionEvent event){
+						JOptionPane.showMessageDialog(Menu.this, "Adicione uma nova Tarefa", "About", JOptionPane.PLAIN_MESSAGE);
+					}
+				});
+	}
+	/*
+	 * Used the "Register Membership", which could be a new employee, a new product or a new sale
+	 * implements a ActionListener, to perform a action when the user requires
+	 */
+	public void createRegisterMenu(){
+		
+		JMenu cadastro = new JMenu("Cadastro");
+		cadastro.setMnemonic('F');
+		
+		/*
+		 * adds the city item to the menu Cadastro
+		 */
+		JMenuItem cidade = new JMenuItem("Cidade");
+		this.addMenuItemListener(cidade, cadastro);
+		
+		/*
+		 * adds a new activity
+		 */
+		JMenuItem ramoAtividade = new JMenuItem("Ramo de Atividade");
+		this.addMenuItemListener(ramoAtividade, cadastro);
+		
+		/*
+		 * add a new payment method
+		 */
+		JMenu formaPagamento = new JMenu("Forma de Pagamento");
+		this.addMenuItemListener(formaPagamento, cadastro);
+		
+		/*
+		 * adds a new seller
+		 */
+		
+		JMenu vendedores = new JMenu("Vendedores");
+		this.addMenuItemListener(vendedores, cadastro);
+		
+		/*
+		 * adds new products
+		 */
+		
+		JMenu produtos = new JMenu("Produtos");
+		this.addMenuItemListener(produtos, cadastro);
+		
+		/*
+		 * adds forms of payment
+		 */
+		JMenu formasPagamento = new JMenu("Formas de Recebimento");
+		this.addMenuItemListener(formasPagamento, cadastro);
+		
+		/*
+		 * adds new Clients 
+		 */
+		JMenu clientes = new JMenu("Clientes");
+		this.addMenuItemListener(clientes, cadastro);
+		
+		/*
+		 * adds new account register
+		 */
+		JMenu cadastroContas = new JMenu("Cadastro de Conta");
+		this.addMenuItemListener(cadastroContas, cadastro);
+		
+		/*
+		 * adds new account plan
+		 */
+		JMenu planoConta = new JMenu("Plano de Conta");
+		this.addMenuItemListener(planoConta, cadastro);
+		
+		/*
+		 * add a new kind of payment
+		 */
+		JMenu tipoPagamento = new JMenu("Tipo de Pagamento");
+		this.addMenuItemListener(tipoPagamento, cadastro);
+		
+		/*
+		 * Suppliers
+		 */
+		
+		JMenu fornecedores = new JMenu("Fornecedores");
+		this.addMenuItemListener(fornecedores, cadastro);
+		
+		/*
+		 * register a new employee
+		 */
+		
+		JMenu cadastroFuncionario = new JMenu("Cadastro de Funcionarios");
+		this.addMenuItemListener(cadastroFuncionario, cadastro);
+		
+		/*
+		 * option to close the program
+		 */
+		JMenuItem exitItem = new JMenuItem("Saida");
+		exitItem.setMnemonic('x');
+		cadastro.add(exitItem);
+		exitItem.addActionListener(
+				new ActionListener(){			
+					public void actionPerformed(ActionEvent event){
+						System.exit(0);
+					}
+				});
+		
+		this.bar.add(cadastro);
+	}
+	
+	/*
+	 * creates the Stock menu (Estoque, in Portuguese)
+	 */
+	public void createStockMenu(){
+		JMenu formatMenu = new JMenu("Estoque");
+		formatMenu.setMnemonic('r');
+		
+		String colors [] = {"Black", "Blue", "Red", "Green"};
+		
+		JMenu colorMenu = new JMenu("Color");
+		colorMenu.setMnemonic('C');
+		
+		colorItems = new JRadioButtonMenuItem[colors.length];
+		colorGroup = new ButtonGroup();
+		ItemHandler itemHandler = new ItemHandler();
+		
+		for(int count = 0; count < colors.length; count++){
+			
+			colorItems[count] = new JRadioButtonMenuItem(colors[count]);
+			colorMenu.add(colorItems[count]);
+			colorGroup.add(colorItems[count]);
+			colorItems[count].addActionListener(itemHandler);
+		}
+		
+		colorItems[0].setSelected(true);
+		
+		formatMenu.add(colorMenu);
+		formatMenu.addSeparator();
+		
+		String fontName[]  = {"Serif", "Monospaced", "SansSerif"};
+		
+		JMenu fontMenu = new JMenu("Font");
+		fontMenu.setMnemonic('n');
+		
+		fonts = new JRadioButtonMenuItem[fontName.length];
+		fontGroup = new ButtonGroup();
+		
+		for(int count = 0; count < fonts.length; count++){
+			fonts[count] = new JRadioButtonMenuItem(fontName[count]);
+			fontMenu.add(fonts[count]);
+			fontGroup.add(fonts[count]);
+			fonts[count].addActionListener(itemHandler);
+		}
+		
+		fonts[0].setSelected(true);
+		fontMenu.addSeparator();
+		
+		String styleNames[] = {"Bold", "Italic"};
+		styleItems = new JCheckBoxMenuItem[styleNames.length];
+		StyleHandler styleHandler = new StyleHandler();
+		
+		for(int count = 0; count < styleNames.length; count++){
+			styleItems[count] = new JCheckBoxMenuItem(styleNames[count]);
+			fontMenu.add(styleItems[count]);
+			styleItems[count].addItemListener(styleHandler);
+		}
+		
+		formatMenu.add(fontMenu);
+		this.bar.add(formatMenu);
+	}
+	
+	/*
+	 * 
+	 * creates the Sales Menu
+	 */
+	public void createSalesMenu(){
+		
+		JMenu vendas = new JMenu("Vendas");
+		vendas.setMnemonic('F');
+		
+		JMenuItem mercadoria = new JMenuItem("mercadoria");
+		mercadoria.setMnemonic('A');
+		vendas.add(mercadoria);
+		vendas.addActionListener(
+				new ActionListener(){
+					
+					public void actionPerformed(ActionEvent event){
+						JOptionPane.showMessageDialog(Menu.this, "Produtos Veterinarios", "About", JOptionPane.PLAIN_MESSAGE);
+					}
+				});
+		
+		this.bar.add(vendas);
+	}
+	
+	/*
+	 * creates the product Menu
+	 */
+	public void createProductMenu(){
+		JMenu produtos = new JMenu("Produtos");
+		produtos.setMnemonic('F');
+		
+		JMenuItem aboutItem = new JMenuItem("Veterinarios");
+		aboutItem.setMnemonic('A');
+		produtos.add(aboutItem);
+		aboutItem.addActionListener(
+				
+				new ActionListener(){
+					
+					public void actionPerformed(ActionEvent event){
+						JOptionPane.showMessageDialog(Menu.this, "Produtos Veterinarios", "About", JOptionPane.PLAIN_MESSAGE);
+					}
+				});
+		
+		/*
+		 * adds a new tab called produtos agropecuarios
+		 * 
+		 */
+		JMenuItem  agropecuarios = new JMenuItem("Agropecuarios");
+		agropecuarios.setMnemonic('A');
+		produtos.add(agropecuarios);
+		aboutItem.addActionListener(
+				
+				new ActionListener(){
+					
+					public void actionPerformed(ActionEvent event){
+						JOptionPane.showMessageDialog(Menu.this, "Produtos agropecuarios", "About", JOptionPane.PLAIN_MESSAGE);
+					}
+				});
+		
+		JMenuItem saudeAnimal = new JMenuItem("Saude animal");
+		aboutItem.setMnemonic('A');
+		produtos.add(saudeAnimal);
+		aboutItem.addActionListener(
+				
+				new ActionListener(){
+					
+					public void actionPerformed(ActionEvent event){
+						JOptionPane.showMessageDialog(Menu.this, "This is an example\nof using menus", "About", JOptionPane.PLAIN_MESSAGE);
+					}
+				});
+		
+		this.bar.add(produtos);
+	}
+	
+	public static void main(String args[]){
+		Menu application = new Menu();
+		application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+}

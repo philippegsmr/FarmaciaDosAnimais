@@ -1,0 +1,19 @@
+
+public class Company {
+	
+	private String name;
+	private String identificationNumber;
+	private Address address;
+	private Telephone telephone;
+	
+	public Company(){
+		this.name = "";
+		this.identificationNumber = "";
+		this.address = new Address();
+		this.telephone = new Telephone();
+	}
+	
+	public Company(){
+		
+	}
+}

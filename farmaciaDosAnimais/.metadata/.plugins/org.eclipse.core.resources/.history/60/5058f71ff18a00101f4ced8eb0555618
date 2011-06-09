@@ -1,0 +1,86 @@
+/*
+ * class written by Philippe Gabriel Souza Moraes Ribeiro
+ * Department of Computer Science, University of Minnesota
+ * Minneapolis, Minnesota, USA - 55455
+ * 
+ * 
+ */
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class CadastroFuncionarios extends Register{
+
+	private JTextField username, socialSecurity, birthday, hiringDate, wage;
+	private TextFieldHandler handler;
+	
+	public CadastroFuncionarios(){
+		
+		super("Cadastro de novo Funcionario");
+		this.handler = new TextFieldHandler();
+		
+		//Container container = getContentPane();
+		//container.setLayout(new FlowLayout());
+		
+		username = new JTextField(10);
+		container.add(username);
+		
+		socialSecurity = new JTextField(10);
+		container.add(socialSecurity);
+		
+		birthday = new JTextField(10);
+		container.add(birthday);
+		
+		hiringDate = new JTextField(10);
+		container.add(hiringDate);
+		
+		wage = new JTextField(10);
+		container.add(wage);
+		
+		username.addActionListener(handler);
+		socialSecurity.addActionListener(handler);
+		birthday.addActionListener(handler);
+		hiringDate.addActionListener(handler);
+		wage.addActionListener(handler);
+		
+	}
+	
+	public static void main(String args[]){
+		
+		CadastroFuncionarios application = new CadastroFuncionarios();
+		application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	private class TextFieldHandler implements ActionListener{
+		
+		public void actionPerformed(ActionEvent event){
+			
+			String string = "";
+			
+			if(event.getSource() == username){
+				string += "Nome do Funcionario: " + event.getActionCommand();
+			}
+			
+			else if(event.getSource() == socialSecurity){
+				string += "CPF do Funcionario: " + event.getActionCommand();
+			}
+			
+			else if(event.getSource() == birthday){
+				string += "Data de nascimento: " + event.getActionCommand();
+			}
+			
+			else if(event.getSource() == hiringDate){
+				string += "Data de contratacao: " + event.getActionCommand();
+			}
+			else if(event.getSource() == wage){
+				string += "Salary: " + event.getActionCommand();
+			}
+			else{
+				System.out.println("An error happened.");
+			}
+			
+			JOptionPane.showMessageDialog(null, string);
+		}
+	}
+}

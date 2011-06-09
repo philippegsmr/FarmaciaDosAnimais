@@ -1,0 +1,9 @@
+
+public class Wage {
+
+	private double wage;
+	
+	public class Wage(){
+		
+	}
+}

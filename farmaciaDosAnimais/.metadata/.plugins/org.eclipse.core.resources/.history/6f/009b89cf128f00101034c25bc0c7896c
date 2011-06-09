@@ -1,0 +1,9 @@
+
+public class ProductForm {
+
+	public ProductForm() extends Frameform{
+		// TODO Auto-generated constructor stub
+		super();
+	}
+
+}

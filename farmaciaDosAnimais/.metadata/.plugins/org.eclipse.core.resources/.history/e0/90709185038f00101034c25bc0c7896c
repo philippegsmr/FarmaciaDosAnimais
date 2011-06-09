@@ -1,0 +1,28 @@
+
+public class Product {
+	
+	private Integer productId;
+	private String productName;
+	private String productUnity;
+	private Integer quantityInStock;
+	private Double priceInCash;
+	private Double priceInTerm;
+	private String description;
+	
+	
+	public Product(){
+		this.productId = 0;
+		this.productName = "";
+		this.productUnity = "";
+		this.quantityInStock = 0;
+		this.priceInCash = 0.00;
+		this.priceInTerm = 0.00;
+		this.description = "";
+	}
+	
+	public Product(Integer id, String name, String unity, Integer quantity, Double priceCash, Double priceTerm, String description){
+		this.setProductId(id);
+		this.setProductName(name);
+		this.set
+	}
+}

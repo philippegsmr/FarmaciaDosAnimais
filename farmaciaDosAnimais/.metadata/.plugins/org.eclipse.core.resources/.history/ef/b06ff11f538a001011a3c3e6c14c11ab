@@ -1,0 +1,75 @@
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class GuiDemo4 extends JFrame {
+
+	private JButton myFirstButton;
+	private JButton mySecondButton;
+
+	// Constructor for a new frame
+
+	public GuiDemo4() {
+
+		super("My First Button Program");
+
+		myFirstButton = new JButton("First Frame");
+		myFirstButton.setFont(new Font( "Arial", Font.BOLD, 18));
+		myFirstButton.setBackground(Color.red);
+
+		mySecondButton = new JButton("New Frame");
+		mySecondButton.setFont(new Font( "Arial", Font.BOLD, 18));
+		mySecondButton.setBackground(Color.green);
+
+		Container c = getContentPane();
+		FlowLayout fl = new FlowLayout(FlowLayout.LEFT);
+		c.setLayout(fl);
+
+		c.add (myFirstButton);
+		c.add (mySecondButton);
+
+		ButtonHandler handler = new ButtonHandler();	//creation of a new Object
+		myFirstButton.addActionListener(handler);	   // Attach/register handler to myFirstButton
+		mySecondButton.addActionListener(handler);	  //Attach/register handler to mySecondButton
+
+		setSize(400, 300);
+		show();
+	}
+
+
+	public static void main(String [] args) {
+
+		// Make frame
+		GuiDemo4 f = new GuiDemo4();
+
+		f.addWindowListener(
+			new WindowAdapter() {
+				public void windowClosing(WindowEvent e) {
+
+					// This closes the window and terminates the
+					// Java Virtual Machine in the event that the
+					// Frame is closed by clicking on X.
+					System.out.println("Exit via windowClosing.");
+					System.exit(0);
+				}
+			}
+		);
+	} // end of main
+
+	// inner class for button event handling
+	private class ButtonHandler implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			if (e.getSource() == myFirstButton) {
+				System.out.println(
+							"Left Button has been pressed.");
+			}
+			if (e.getSource() == mySecondButton) {
+				System.out.println(
+							"Right Button has been pressed.");
+			}
+		}
+	} // end of inner class
+} // end of outer class
+
+

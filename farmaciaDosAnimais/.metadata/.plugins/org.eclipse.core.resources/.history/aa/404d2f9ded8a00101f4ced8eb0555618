@@ -1,0 +1,18 @@
+
+public class SocialSecurity {
+
+	
+	public SocialSecurity(String country){
+		
+		if(country.equals("Brazil")){
+			
+		}
+		else if(country.equals("United States of America")){
+			
+		}
+	}
+	
+	public void setSocialBrazilianFormat(String numbers){
+		
+	}
+}

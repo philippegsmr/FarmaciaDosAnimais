@@ -1,0 +1,146 @@
+
+public class Employee {
+	/**
+	 * 
+	 */
+	private Name employeeName;
+	private Birthday birthday;
+	/*
+	 * different format: country = brazil;
+	 */
+	private SocialSecurity socialSecurityNumber;
+	/*
+	 * This object may be replaced by Salary,
+	 * so Salary is wage * hours ... 
+	 * and the employee may be paid also by month, instead by hours
+	 */
+	private Salary salary;
+	private Date startingDate;
+	private Boolean previousEmployed;
+
+	private int employeeId;
+	
+	private Telephone telephone;
+	
+	/*
+	 * sets the employee Address
+	 */
+	private Address address;
+	
+	public Employee() {
+		this.birthday = new Birthday();
+		this.employeeName = new Name();
+		this.socialSecurityNumber = new SocialSecurity();
+		this.salary = new Salary();
+		this.startingDate = new Date();
+		this.previousEmployed = false;
+		this.employeeId = 0;
+		this.address = new Address();
+		this.telephone = new Telephone();
+	}
+	
+	public Employee(Birthday birthday, Name name, SocialSecurity number, Salary salary, Telephone telephone) {
+		this.setEmployeeBirthday(birthday);
+		this.setEmployeeName(name);
+		this.setEmployeeSocialSecurityNumber(number);
+		this.setEmployeeSalary(salary);
+		this.setEmployeeTelephone(telephone);
+	}
+	
+	public void setEmployeeTelephone(Telephone telephone){
+		this.telephone = telephone;
+	}
+	
+	public void setStartingDate(Date start){
+		this.startingDate = start;
+	}
+	public void setPreviousEmployed(boolean answer){
+		this.previousEmployed = answer;
+	}
+	public void setEmployeeSalary(Salary salary) {
+		// TODO Auto-generated method stub
+		this.salary = salary;
+	}
+	
+	public Date getStartingDate(){
+		return this.startingDate;
+	}
+
+	private void setEmployeeSocialSecurityNumber(SocialSecurity number) {
+		// TODO Auto-generated method stub
+		this.socialSecurityNumber = number;
+		
+	}
+	
+	public int getEmployeeId(){
+		return this.employeeId;
+	}
+	
+	public void setEmployeeId(int id){
+		this.employeeId = id;
+	}
+	
+	/*
+	 * Sets the Seller Name
+	 * using the Name object
+	 */
+	private void setEmployeeName(Name name) {
+		// TODO Auto-generated method stub
+		this.employeeName = name;
+	}
+
+	/*
+	 * Sets the Seller's Birthday 
+	 */
+	public void setEmployeeBirthday(Birthday birthday){
+		this.birthday = birthday;
+	}
+	
+	/*
+	 * returns the Seller's Birthday
+	 */
+	public Birthday getEmployeeBirthday(){
+		return this.birthday;
+	}
+	
+	public Name getEmployeeName(){
+		return this.employeeName;
+	}
+	
+	public Telephone getEmployeeTelephone(){
+		return this.telephone;
+	}
+	public Salary getEmployeeSalary(){
+		return this.salary;
+	}
+	
+	public SocialSecurity getEmployeeSocialSecurityNumber(){
+		return this.socialSecurityNumber;
+	}
+	
+	public Address getEmployeeAddress(){
+		return this.address;
+	}
+	
+	public Boolean getPreviousEmployed(){
+		return this.previousEmployed;
+	}
+	
+	public String formatToString(){
+		Address add = this.getEmployeeAddress();
+		Locality loc = add.getAddressLocality();
+		
+		String employee =	this.getEmployeeName().formatToString() + ", " +
+							this.getPreviousEmployed().toString() + ", " +
+							this.getEmployeeBirthday().formatToString() + ", " + 
+							this.getEmployeeSocialSecurityNumber() + ", " + 
+							this.salary.formatToString() + ", " + 
+							this.startingDate.formatToString() + ", " + 
+							this.telephone.getTelephone() + ", " +
+							loc.getRegion() + ", " + 
+							loc.getCity() + ", " +
+							loc.getState() + ", " +
+							loc.getCountry() 
+	}
+	
+}

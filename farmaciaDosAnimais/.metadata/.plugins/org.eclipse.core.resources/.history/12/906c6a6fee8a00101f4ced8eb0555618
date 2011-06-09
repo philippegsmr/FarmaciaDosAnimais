@@ -1,0 +1,9 @@
+
+public class Birthday extends Date{
+
+	
+	public Birthday(){
+		super();
+	}
+	
+}

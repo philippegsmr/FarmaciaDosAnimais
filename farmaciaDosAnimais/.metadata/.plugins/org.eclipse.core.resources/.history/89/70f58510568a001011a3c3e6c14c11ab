@@ -1,0 +1,46 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+/*
+ * class written by Philippe Ribeiro
+ * Department of Computer Science, University of Minnesota
+ * Minneapolis, Minnesota, USA - 55455
+ * 
+ * class Frameform provides the general frame that is going to be used 
+ * to all the functionalities into the program
+ * so it creates a unique frame, making it a standard
+ */
+public class Frameform extends JFrame{
+	
+	/*
+	 * used to display additional information
+	 */
+	private JLabel displayLabel;
+	
+	/*
+	 * constructor receives a string to the title of the frame
+	 */
+	public Frameform(String title){
+		
+		super(title);
+		
+		displayLabel = new JLabel("Farmacia dos Animais", SwingConstants.CENTER);
+		displayLabel.setForeground(Color.BLACK);
+		displayLabel.setFont(new Font("Serif", Font.PLAIN, 72));
+		
+		/*
+		 * default size, but it can be override by the function setFrameSize
+		 */
+		setSize(800, 600);
+		setVisible(true);
+	}
+	
+	/*
+	 * this function can change the Frame Size at any time
+	 */
+	public void setFrameSize(int height, int width){
+		this.setSize(width, height);
+	}
+	
+}

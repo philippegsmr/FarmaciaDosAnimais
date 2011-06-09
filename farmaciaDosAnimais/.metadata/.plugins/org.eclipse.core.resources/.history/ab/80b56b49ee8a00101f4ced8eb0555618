@@ -1,0 +1,41 @@
+
+public class SocialSecurity {
+
+	private String socialSecurityNumber;
+	
+	public SocialSecurity(String country, String numbers){
+		
+		if(country.equals("Brazil")){
+			this.setSocialBrazilianFormat(numbers);
+		}
+		else if(country.equals("United States of America")){
+			this.setSocialUSAFormat(numbers);
+		}
+		else{
+			System.out.println("Unknown");
+		}
+	}
+	
+	/*
+	 * numbers is in the format xxxxxxxxxx
+	 */
+	public void setSocialBrazilianFormat(String numbers){
+		/*
+		 * regular expression that formats to 
+		 * xxx.xxx.xxx - xx
+		 */
+		this.socialSecurityNumber = numbers;
+	}
+	
+	/*
+	 * regular expression that formats to
+	 * xxx - xx - xxxx
+	 */
+	public void setSocialUSAFormat(String numbers){
+		this.socialSecurityNumber = numbers;
+	}
+	
+	public String getSocialSecurityNumber(){
+		return this.socialSecurityNumber;
+	}
+}

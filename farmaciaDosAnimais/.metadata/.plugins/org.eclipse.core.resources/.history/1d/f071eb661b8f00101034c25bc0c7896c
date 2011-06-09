@@ -1,0 +1,17 @@
+
+public class Supplier {
+
+	private Name name;
+	private Telephone telephone;
+	private Company company;
+	private Integer supplierId;
+	private Address address;
+	
+	public Supplier(){
+		this.name = new Name();
+		this.telephone = new Telephone();
+		this.company = new Company();
+		this.address = new Address();
+		this.supplierId = 0;
+	}
+}
